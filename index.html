@@ -1344,64 +1344,103 @@
                 </div>
                 <div class="hero-model">
                     <!-- صورة الباص الجديدة -->
-                    <svg width="530" height="450" viewBox="0 0 530 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-    @keyframes rotate {
+    @keyframes wheel-rotate {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
+    @keyframes light-blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.3; }
     }
-    .floating { animation: float 3s ease-in-out infinite; }
-    .rotating { animation: rotate 8s linear infinite; transform-origin: center; }
-    .pulsing { animation: pulse 2s ease-in-out infinite; }
+    @keyframes light-pulse {
+      0%, 100% { opacity: 1; fill: #ffff00; }
+      50% { opacity: 0.6; fill: #ffaa00; }
+    }
+    .wheel { 
+      animation: wheel-rotate 2s linear infinite; 
+      transform-origin: center;
+    }
+    .front-light { 
+      animation: light-blink 1s ease-in-out infinite; 
+    }
+    .back-light { 
+      animation: light-pulse 0.8s ease-in-out infinite; 
+    }
   </style>
   
-  <!-- الخلفية الأساسية -->
-  <rect width="530" height="450" fill="#1a1a2e"/>
+  <!-- جسم الباص البرتقالي -->
+  <rect x="100" y="120" width="400" height="120" rx="20" fill="#FF8C00"/>
+  <rect x="120" y="80" width="360" height="60" rx="15" fill="#FF8C00"/>
   
-  <!-- العنصر المركزي الدائري -->
-  <g class="floating">
-    <circle cx="265" cy="225" r="80" fill="#16213e"/>
-    <circle cx="265" cy="225" r="60" fill="#0f3460"/>
-    <circle cx="265" cy="225" r="40" fill="#e94560"/>
+  <!-- النوافذ -->
+  <rect x="140" y="90" width="80" height="40" rx="8" fill="#87CEEB"/>
+  <rect x="240" y="90" width="80" height="40" rx="8" fill="#87CEEB"/>
+  <rect x="340" y="90" width="80" height="40" rx="8" fill="#87CEEB"/>
+  
+  <!-- الخطوط الزخرفية -->
+  <rect x="120" y="140" width="360" height="8" fill="#FF4500"/>
+  <rect x="120" y="160" width="360" height="4" fill="#FF4500"/>
+  
+  <!-- الأبواب -->
+  <rect x="180" y="140" width="60" height="80" rx="5" fill="#FF6347"/>
+  <rect x="260" y="140" width="60" height="80" rx="5" fill="#FF6347"/>
+  
+  <!-- العجلات -->
+  <g class="wheel">
+    <circle cx="180" cy="260" r="25" fill="#333"/>
+    <circle cx="180" cy="260" r="15" fill="#666"/>
+    <circle cx="180" cy="260" r="5" fill="#FFF"/>
+    <!-- تفاصيل العجلة -->
+    <line x1="180" y1="235" x2="180" y2="245" stroke="#FFF" stroke-width="2"/>
+    <line x1="180" y1="275" x2="180" y2="285" stroke="#FFF" stroke-width="2"/>
+    <line x1="155" y1="260" x2="165" y2="260" stroke="#FFF" stroke-width="2"/>
+    <line x1="195" y1="260" x2="205" y2="260" stroke="#FFF" stroke-width="2"/>
   </g>
   
-  <!-- العناصر الدوارة -->
-  <g class="rotating">
-    <path d="M265 145 L285 205 L345 205 L295 245 L315 305 L265 265 L215 305 L235 245 L185 205 L245 205 Z" 
-          fill="#e94560" opacity="0.8"/>
+  <g class="wheel">
+    <circle cx="420" cy="260" r="25" fill="#333"/>
+    <circle cx="420" cy="260" r="15" fill="#666"/>
+    <circle cx="420" cy="260" r="5" fill="#FFF"/>
+    <!-- تفاصيل العجلة -->
+    <line x1="420" y1="235" x2="420" y2="245" stroke="#FFF" stroke-width="2"/>
+    <line x1="420" y1="275" x2="420" y2="285" stroke="#FFF" stroke-width="2"/>
+    <line x1="395" y1="260" x2="405" y2="260" stroke="#FFF" stroke-width="2"/>
+    <line x1="435" y1="260" x2="445" y2="260" stroke="#FFF" stroke-width="2"/>
   </g>
   
-  <!-- العناصر المستطيلة -->
-  <rect x="80" y="320" width="120" height="60" rx="10" fill="#16213e" class="pulsing"/>
-  <rect x="330" y="320" width="120" height="60" rx="10" fill="#0f3460" class="pulsing"/>
+  <!-- الأنوار الأمامية -->
+  <g class="front-light">
+    <circle cx="500" y="150" r="12" fill="#FFFF00"/>
+    <circle cx="500" y="180" r="12" fill="#FF4500"/>
+  </g>
   
-  <!-- الخطوط المتقاطعة -->
-  <line x1="50" y1="50" x2="480" y2="400" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
-  <line x1="480" y1="50" x2="50" y2="400" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
+  <!-- الأنوار الخلفية -->
+  <g class="back-light">
+    <circle cx="100" y="150" r="10" fill="#FF0000"/>
+    <circle cx="100" y="180" r="10" fill="#FFFFFF"/>
+  </g>
   
-  <!-- النقاط المتناثرة -->
-  <circle cx="100" cy="100" r="3" fill="#e94560"/>
-  <circle cx="150" cy="180" r="3" fill="#e94560"/>
-  <circle cx="400" cy="120" r="3" fill="#e94560"/>
-  <circle cx="350" cy="300" r="3" fill="#e94560"/>
-  <circle cx="200" cy="350" r="3" fill="#e94560"/>
+  <!-- مصابيح إضافية -->
+  <g class="front-light">
+    <rect x="500" y="140" width="8" height="20" fill="#FFFF00"/>
+  </g>
   
-  <!-- العناصر النصية -->
-  <text x="265" y="225" text-anchor="middle" fill="white" font-family="Arial" font-size="14" dy="5">SVG Design</text>
+  <!-- المرايا الجانبية -->
+  <rect x="480" y="100" width="15" height="25" rx="5" fill="#FF8C00"/>
+  <rect x="105" y="100" width="15" height="25" rx="5" fill="#FF8C00"/>
   
-  <!-- العناصر الإضافية -->
-  <rect x="180" y="80" width="170" height="40" rx="8" fill="#16213e" opacity="0.8"/>
-  <rect x="120" y="150" width="80" height="25" rx="5" fill="#0f3460" opacity="0.8"/>
-  <rect x="350" y="150" width="80" height="25" rx="5" fill="#0f3460" opacity="0.8"/>
-                    </svg>
+  <!-- تفاصيل إضافية -->
+  <circle cx="470" y="110" r="3" fill="#333"/>
+  <circle cx="130" y="110" r="3" fill="#333"/>
+  
+  <!-- الزجاج الأمامي -->
+  <path d="M500 85 L520 85 L520 75 L500 75 Z" fill="#87CEEB"/>
+  
+  <!-- الزجاج الخلفي -->
+  <path d="M100 85 L80 85 L80 75 L100 75 Z" fill="#87CEEB"/>
+    </svg>
                 </div>
             </div>
         </div>
