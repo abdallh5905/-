@@ -1344,7 +1344,64 @@
                 </div>
                 <div class="hero-model">
                     <!-- صورة الباص الجديدة -->
-                    <img src="https://abdallh5905.github.io/-/header_bus.svg" alt="باص نسك ترافيل" class="bus-image">
+                    <svg width="530" height="450" viewBox="0 0 530 450" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .floating { animation: float 3s ease-in-out infinite; }
+    .rotating { animation: rotate 8s linear infinite; transform-origin: center; }
+    .pulsing { animation: pulse 2s ease-in-out infinite; }
+  </style>
+  
+  <!-- الخلفية الأساسية -->
+  <rect width="530" height="450" fill="#1a1a2e"/>
+  
+  <!-- العنصر المركزي الدائري -->
+  <g class="floating">
+    <circle cx="265" cy="225" r="80" fill="#16213e"/>
+    <circle cx="265" cy="225" r="60" fill="#0f3460"/>
+    <circle cx="265" cy="225" r="40" fill="#e94560"/>
+  </g>
+  
+  <!-- العناصر الدوارة -->
+  <g class="rotating">
+    <path d="M265 145 L285 205 L345 205 L295 245 L315 305 L265 265 L215 305 L235 245 L185 205 L245 205 Z" 
+          fill="#e94560" opacity="0.8"/>
+  </g>
+  
+  <!-- العناصر المستطيلة -->
+  <rect x="80" y="320" width="120" height="60" rx="10" fill="#16213e" class="pulsing"/>
+  <rect x="330" y="320" width="120" height="60" rx="10" fill="#0f3460" class="pulsing"/>
+  
+  <!-- الخطوط المتقاطعة -->
+  <line x1="50" y1="50" x2="480" y2="400" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="480" y1="50" x2="50" y2="400" stroke="#e94560" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- النقاط المتناثرة -->
+  <circle cx="100" cy="100" r="3" fill="#e94560"/>
+  <circle cx="150" cy="180" r="3" fill="#e94560"/>
+  <circle cx="400" cy="120" r="3" fill="#e94560"/>
+  <circle cx="350" cy="300" r="3" fill="#e94560"/>
+  <circle cx="200" cy="350" r="3" fill="#e94560"/>
+  
+  <!-- العناصر النصية -->
+  <text x="265" y="225" text-anchor="middle" fill="white" font-family="Arial" font-size="14" dy="5">SVG Design</text>
+  
+  <!-- العناصر الإضافية -->
+  <rect x="180" y="80" width="170" height="40" rx="8" fill="#16213e" opacity="0.8"/>
+  <rect x="120" y="150" width="80" height="25" rx="5" fill="#0f3460" opacity="0.8"/>
+  <rect x="350" y="150" width="80" height="25" rx="5" fill="#0f3460" opacity="0.8"/>
+                    </svg>
                 </div>
             </div>
         </div>
